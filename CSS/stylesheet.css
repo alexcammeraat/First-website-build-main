@@ -1,0 +1,890 @@
+/* Color Palette */
+
+:root {
+    --color-Primary: #2584ff ;
+    --color-Secondary: #00d9ff ;
+    --color-Accent:#ff3400 ; 
+    --color-Heading: #1b0760 ; 
+    --color-text: #918ca4 ;
+    --color-text-darker:#5c5577; 
+    --color-border:#ccc;
+    --border-radius: 30px; 
+    
+}
+*, 
+*::after, 
+*::before{
+    box-sizing: border-box;
+}
+/* typography */
+::selection{
+    background: var(--color-Primary); /*used to make change  highlighted areas to easy readable text.*/
+    color: #fff;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Inter, arial, Arial, Helvetica, sans-serif;
+    color: var(--color-text);
+    font-size: 2.4rem;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    color: var(--color-Heading);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+h1 {
+font-size: 7rem;
+}
+
+h2{
+    font-size: 4rem;
+}
+
+h3{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+p{
+    margin-top: 0;
+}
+
+@media screen and (min-width:1024px) {
+    body {
+        font-size: 1.8rem;
+    }
+    h1{
+        font-size: 8rem;
+    }
+    h2{
+        font-size: 4rem;
+    }
+    h3 {
+        font-size: 2.4rem;
+    }
+    
+}
+
+/* Links */
+a {
+    text-decoration: none;  /*Removes underline */
+}
+
+.link-arrow {
+    color: var(--color-Accent);
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.link-arrow::after {
+content: "-->";
+margin-left: 5px;
+transition: margin 0.15s;
+}
+
+.link-arrow:hover::after{
+    margin-left: 10px;
+}
+
+@media screen and (min-width:1024px) {
+    .link-arrow {
+        font-size: 1.5rem;
+    }
+    
+}
+
+/* Badges */
+
+/* structure */
+.badge {
+    border-radius: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0.5rem 2rem;
+    white-space: nowrap;
+}
+
+
+/* badge Skin seperated by two -- hyphens */
+.badge--primary {
+    background: var(--color-Primary);
+    color: #fff;
+}
+
+.badge--secondary {
+    background: var(--color-Secondary);
+    color: #fff;
+}
+
+.badge--small {
+    font-size: 1.6rem;
+    padding: 0.5rem 1.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .badge {
+        font-size: 1.5rem;
+    }
+    .badge--small {
+        font-size: 1.2rem;
+    }
+    
+}
+
+/* Icons */
+/* structure */
+.icon {
+    width: 40px;
+    height: 40px;
+}
+/* skin */
+.icon--primary {
+    fill: var(--color-Primary); /* fill only for SVGs*/
+} 
+.icon--small {
+    width: 30px;
+    height: 30px;
+    }
+.icon--white {
+    fill: #fff;
+}
+/* Single hyphen used to separte words */
+.icon-container{
+    background: #F3F9FA;
+    width: 64px;
+    height: 64px;
+    border-radius: 100% ;
+    display: inline-flex; /*TO CENTER THE ICON IN THE CIRCLE*/
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-container--accent{
+    background: var(--color-Accent);
+}
+
+/* lists */
+/* structure VVV */
+.list{
+    list-style: none;  /*removes default bulletpoints*/
+    padding-left: 0; /* removes defult padding */
+    color: var(--color-Heading); 
+}
+
+/* Skins of list */
+.list--inline .list__item{
+display: inline-block;
+margin-right: 2rem;
+}
+
+.list--tick{
+    list-style-image: url(../Images/tick.svg) ;
+    padding-left: 3rem;
+
+}
+
+.list--tick .list__item {
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width:1024px) {
+    .list--tick .list__item {
+        padding-left: 0;
+    }
+}
+
+/* button */
+
+.btn {
+    border-radius: 40px;
+    border: 0; 
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding: 2rem 4vw; /* 4vw 4% of the view port. allows the buttonss to streach and srink to diffrent devices.*/
+    outline: 0;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 1rem 0rem;
+}
+
+.btn .icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    vertical-align: middle; /* to align search icon in the midde */
+}
+
+.btn--primary {
+    background: var(--color-Primary);
+    color: #fff;
+}
+.btn--primary:hover {
+    background: #3a8ffd;
+}
+.btn--secondary {
+    background: var(--color-Secondary);
+    color: #fff;
+}
+
+.btn--secondary:hover {
+    background: #00c8eb;
+}
+.btn--accent {
+    background: var(--color-Accent);
+    color: #fff;
+}
+
+.btn--accent:hover{
+    background:#ec3000 ;
+}
+
+.btn--block{
+    width: 100%;
+    display: inline-block;
+}
+
+.btn--outline {
+    background: #fff;
+    color: var(--color-Heading);
+    border: 2px solid var(--color-Heading);
+}
+.btn--outline:hover{
+    background: var(--color-Heading);
+    color: #fff;
+}
+@media  screen and (min-width:1024px) {
+    .btn {
+        font-size: 1.5rem;
+    }
+}
+
+/* Input */
+
+
+.input{
+    border-radius: var(--border-radius); 
+    border: 1px solid --color-border;
+    color: var(--color-Heading);
+    font-size: 2rem;
+    outline: 0;
+    padding: 1.5rem 3.5rem;
+}
+
+::placeholder {
+color: #cdcbd7;
+}
+
+@media screen and (min-width: 1024px) {
+    .input{
+        font-size: 1.5rem;
+    }
+}
+
+/*? input Group */
+
+.input-group{
+border: 1px solid var(--color-border);
+border-radius: var(--border-radius) ;
+display: flex; /* used to make search button go to otherside of input field box*/
+}
+
+.input-group .input {
+    border: 0; /* NESTING */
+    flex-grow: 1; /* pushes that seach button to right side*/
+    padding: 1.5rem  2rem; /*Reduces the space between button or icon etc and text if on the left side*/
+    width: 0;
+    
+}
+
+.input-group .btn {
+    margin: 4px;
+}
+
+/*? Cards */
+
+.card {
+    border-radius: 7px;
+    box-shadow: 0 0 20px 10px;
+    overflow: hidden;
+}
+.card__header,
+.card__body{
+    padding: 2rem 3rem;
+}
+
+.card--primary .card__header{
+    background: var(--color-Primary);
+    color: #fff;
+}
+.card--secondary .card__header{
+    background: var(--color-Secondary);
+    color: #fff;
+}
+.card--primary .badge--primary {
+    background: #123de4;
+}
+.card--secondary .badge--secondary {
+    background: #02cdf1 ;
+}
+
+/*? plan */
+
+.plan {
+    transition: transform .2s ease-out;
+}
+.plan__name {
+    margin: 0 ;
+    color: #fff;
+    font-weight: 500;
+    font-size: 2.4rem;
+}
+
+.plan__price{
+    font-size: 6rem;
+    position: relative;
+}
+.plan__billing-cycle{
+    font-size: 2.4rem;
+    font-weight: 300;
+    opacity: 0.8;
+    margin-right: 1rem ;
+}
+
+.plan__description{
+ font-size: 2rem;
+ font-weight: 300;
+ letter-spacing: 1px;   
+ display: block; /*to make the span go into a block level element */
+}
+
+.plan .list__item{
+    margin-bottom: 2rem;
+}
+.plan--popular {
+    transform: scale(1.1);
+}
+.plan--popular .card__header {
+    position: relative;
+}
+.plan--popular .card__header::before {
+    content: url(../Images/popular.svg);
+    width: 40px;
+    display: inline-block;
+    position: absolute;
+    top: -6px ;
+    right: 5%;
+}
+
+.plan:hover{
+transform: scale(1.05);
+}
+
+.plan--popular:hover{
+    transform: scale(1.15);
+    }
+@media screen and (min-width: 1024px) {
+    .plan__name{
+        font-size: 1.4rem;
+    }
+    .plan__price {
+        font-size: 5rem;
+    }
+    .plan__billing-cycle{
+        font-size: 1.6rem;
+    }
+    .plan__description{
+        font-size: 1.7rem;
+    }
+
+}
+
+/*? Media */
+
+.media {
+    display: flex; /*used to Make header and Text go beside the image*/
+    margin-bottom: 4rem;
+}
+
+.media__title{
+    margin-top: 0;
+}
+
+.media__body{
+    margin: 0 2rem;
+}
+
+.media__image{
+    margin-top: 1rem;
+}
+
+/*? Quotes */
+
+.quote {
+    font-size: 3rem;
+    font-style: italic;
+    color: var(--color-text-darker);
+    line-height: 1.3;
+}
+
+/* this Adds "quotations " before and after the text. */
+.quote__text::before{
+    content: open-quote ;
+}
+.quote__text::after{
+    content: close-quote;
+}
+
+.quote__author{
+    font-size: 3rem;
+    font-weight: 500;
+    font-style: normal;
+    margin-bottom: 0;
+    
+}
+.quote__company{
+    color: var(--color-Heading);
+    opacity: .4;
+    font-size: 2rem;
+    font-style: normal;
+}
+
+.quote__line{
+position: relative;
+bottom: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+    .quote{
+        font-size: 2rem;
+    }
+    .quote__author{
+        font-size: 2.4rem;
+
+    }
+    .quote__company{
+        font-size: 1.6rem;
+    }
+}
+
+/*? Grid */
+
+.grid {
+    display: grid;
+}
+
+@media screen and (min-width:768px) {
+    .grid--1x2{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .grid--1x3{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* testimonials */
+.testimonial{
+    padding: 3rem ;
+
+}
+.testimonial__image{
+    position: relative;
+}
+.testimonial__image>img  /*! This is used so that we can get both the image and icon to be relative positioned */
+{ 
+    width: 100%;
+}
+
+.testimonial__image > .icon-container {
+    position: absolute;
+    top: 3rem;
+    right: -32px;
+}
+
+@media screen and (min-width: 768px ) {
+    .testimonial .quote,  
+    .testimonial .quote__author {
+        font-size: 2.4rem;
+    }
+    .testimonial .quote {
+        margin-left: 6rem;
+    }
+    
+}
+
+/* CallOUT */
+
+.callout{
+    padding: 4rem ;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.callout--primary{
+    background: var(--color-Primary);
+    color: #fff;
+}
+.callout__heading{
+    color: #fff;
+    margin-top: 0;
+    font-size: 3rem;
+}
+
+
+/* targetting buttons inside a callout component*/
+.callout .btn {
+    justify-self: center; /*Horiozontily*/
+    align-self: center; /*Vertically */
+}
+.callout__content{
+    text-align: center;
+}
+.btn--stretched{
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+@media screen and (min-width:768px) {
+  .callout .grid--1x2{
+    grid-template-columns: 1fr auto;
+  }
+  
+  
+    .callout__content{
+        text-align: left;
+    }
+    .callout .btn {
+        justify-self: start; /* to move the button closer to the text so that it isnt in the center in empty space */
+        margin: 0 3rem;
+    }
+}
+
+/*! collapsible */
+
+.collapsible__header{
+    display: flex; /* makes sure the title and icon are beside eachother */
+    justify-content: space-between; /*this pushes the items to the edges of the container and adds space between them*/
+}
+
+.collapsible__heading{
+    margin-top: 0;
+    font-size: 3rem;
+}
+
+.collapsible__chevron{
+    height: 50px;
+    width: 50px;
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+}
+
+.collapsible__content{
+   max-height: 0;
+   overflow: hidden;
+   transition: all 0.3s;
+   opacity: 0;
+}
+
+.collapsible--expanded .collapsible__chevron {
+    transform: rotate(0);
+}
+
+.collapsible--expanded .collapsible__content{
+    max-height: 100vh;
+opacity: 1;
+}
+
+/* block */
+.block{
+    --padding-vertical: 6rem; /* a veriable that is avalible only for "block elements" and there children. */
+    padding: var(--padding-vertical) 2rem;
+   
+}
+.block__header{ /* if we didnt make a seprate class, then everything under the block element would be center aligned even cards etc.*/
+    text-align: center;
+    margin-bottom: 4rem;  /*we add this so we dont need to repeat the margin bottom to every Header in every block*/
+}
+.block__heading{
+    margin-top: 0;
+}
+
+.block--dark {
+    background: #000;
+    color: #7b858b;
+}
+
+.block--dark h1,
+.block--dark h2,
+.block--dark h3
+{
+    color: #fff;
+} 
+
+.block--skewed-right{
+    padding-bottom: calc(var(--padding-vertical) + 4rem); 
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
+}
+
+.block--skewed-left{
+    padding-bottom: calc(var(--padding-vertical) + 4rem); 
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+}
+
+/* Width of page contraint */
+.container{
+    max-width: 1140px;
+    margin: 0 auto; /*centers the block "0" px for vertial margin and "auto" for horizontal margin*/ 
+}
+
+/* Navigation Bar */
+
+.nav{
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.nav__list {
+    width:100%;
+    margin: 0 ;
+}
+
+.nav__item {
+    padding: 0.5rem 2rem;
+    border-bottom: 1px solid #222 ;
+}
+
+.nav__item>a{
+    color: #d2d0db;
+    transition: color 0.3s;
+}
+.nav__item>a:hover{
+    color: #fff;
+}
+
+.nav__toggler{
+    opacity: 0.5;
+    transition: box-shadow .15s ;
+    cursor: pointer;
+}
+
+.nav.collapsible--expanded .nav__toggler {
+    opacity: 1;
+    box-shadow: 0 0 0 3px #666;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+    .nav__toggler{
+        display: none;
+    }
+
+    .nav__list{
+        width: auto;
+        display: flex;
+        font-size: 1.6rem;
+        max-height: 100%; /* to make the list visable on larger screens */
+        opacity: 1;
+    }
+
+    .nav__item{
+        border: 0   ;
+    }
+}
+
+/* Hero section */
+
+.hero {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+
+}
+.hero__tagline{
+    font-size: 2rem;
+    color: #b9c3cf;
+    letter-spacing: 1px;
+    margin: 2rem 0 5rem;
+}
+
+.hero__image{
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .hero{
+        padding-top: 0;
+    }
+    .hero__content {
+        text-align: left;
+        align-self: center;
+    }
+}
+
+/* Domain Block */
+
+.block-domain .input-group{
+box-shadow: 0 0 30px 20px #e6ebee ;  /* 1st&2nd: 0 for offset  3rd: 30px for blurring 4th: 20px for radius*/
+border: 0; /* set back to 0 as input-group has a border*/
+margin: 4rem auto; 
+max-width: 670px;
+}
+
+.block-domain__prices{
+    color: var(--color-Heading);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 6rem) ;
+    font-size: 2rem;
+    font-weight: 600;
+    justify-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width:768px) {
+    .block-domain__prices{
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
+}
+
+/* plan block */
+
+.block-plan .grid{
+gap: 8rem 4rem;
+}
+
+.block-plan .card {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* features (media_block) */
+.feature{
+    gap: 4rem 2rem; /*gap: (1st: 4rem) for rows, (2nd: 2rem) for coloums.*/
+    margin: 12rem 0;
+}
+
+.feature:first-of-type{
+    margin-top: 6rem;
+}
+
+.feature__heading{
+    margin: 1rem 0;
+}
+
+.feature__image{
+    width: 100%;
+}
+
+@media  screen and (min-width: 768px) {
+    .feature:nth-of-type(even) .feature__content{
+        order: 2;
+    }
+}
+
+/* Showcase Block */
+
+.block-showcase__image > img {
+    width:a 100%;
+
+}
+
+.media__objects{
+    margin-top: 8rem;
+}
+
+@media screen and (min-width:768px) {
+   .block-showcase .grid {
+grid-template-columns: 50% 50%;
+   }
+    .block-showcase__image{
+        justify-self: end;
+    }
+    .block-showcase__image > img {
+        width: auto;
+        max-width: 700px;
+    }
+}
+
+/* Footer */
+
+.footer{
+    background: #232323;
+}
+.footer a{
+    color:#777 ;
+    transition: color 0.3s;
+}
+.footer a:hover{
+    color:#fff ;
+}
+
+.footer__section{
+    padding: 2rem;
+    border-bottom: 1px solid #393939;
+}
+.footer__section .list{
+    margin: 0;
+}
+
+.footer__heading{
+    text-transform: uppercase;
+    font-weight: 600 ;
+}
+
+.footer__brand{
+    margin-top: 5rem;
+    text-align: center;
+}
+.footer__brand img{
+    width: 100%;
+    max-width: 230px;
+}
+
+.footer__copyright {
+    font-size: 2.1rem;
+    color: #fff;
+    opacity: .3;
+}
+@media screen and (min-width:768px) {
+    .footer__sections{
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+}
+.footer .collapsible__chevron{
+    display: none;
+}
+
+.footer .collapsible__content {
+    opacity: 1;
+    max-height: 100%;
+}
+
+.footer__brand{
+    order: -1;
+    margin-top: 1rem;
+}
+.footer__copyright{
+    font-size: 1.5rem;
+}
+.footer__section{
+    border:0; 
+}
+.footer__heading{
+    font-size: 1.6rem;
+}
+}
